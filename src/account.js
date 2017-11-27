@@ -9,6 +9,8 @@
     creditAccount = function(amount) {
       if (typeof amount === "string") {
         throw new Error('Amount credited must be an integer');
+      } else if (amount < 0){
+      throw new Error('Amount credited cannot be a negative integer');
       } else {
         _balance += amount;
       }
