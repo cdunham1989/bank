@@ -27,6 +27,7 @@
 
     debitAccountBalance = function(amount) {
       account.debitAccount(amount);
+      _transactionHistory.push({date: self.getDate(), credit: null, debit: amount, balance: self.getAccountBalance()});
     };
 
     return {

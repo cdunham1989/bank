@@ -31,5 +31,10 @@ describe ('Bank', function() {
       bank.debitAccountBalance(100);
       expect(bank.getAccountBalance()).toEqual(900);
     });
+
+    it('stores debit transactions in the transaction history', function() {
+      bank.debitAccountBalance(100);
+      expect(bank.getTransactionHistory()).toEqual([{date: "27/11/2017", credit: null, debit: 100, balance: 900}]);
+    });
   });
 });
