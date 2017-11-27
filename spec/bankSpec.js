@@ -42,7 +42,7 @@ describe ('Bank', function() {
       bank.creditAccountBalance(100);
       bank.debitAccountBalance(100);
       expect(bank.getTransactionHistory()).toEqual([{date: "27/11/2017", credit: 100, debit: " ", balance: 1100}, {date: "27/11/2017", credit: " ", debit: 100, balance: 1000}]);
-      expect(bank.printStatement()).toEqual('date || credit || debit || balance \n 27/11/2017 || 100 ||   || 1100 \n 27/11/2017 ||   || 100 || 1000')
+      expect(bank.printStatement()).toEqual('date || credit || debit || balance \n 27/11/2017 || 100 ||   || 1100 \n 27/11/2017 ||   || 100 || 1000 \n');
     })
   });
 });

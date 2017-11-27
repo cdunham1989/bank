@@ -10,12 +10,39 @@ When initially creating the app I planned to store an array of transactions insi
 
 I then began to add in the basic functionality for crediting and debiting the account. Bringing in functionality to work against edge cases. At this point I added context sections for debit and credit to the account spec file to make them more readable.
 
+At this point I decided to make the Bank class the controlling object. It manages account credit, debit and transaction history. It can be used to print a statement of the transactions too.
+
+## Things to Work on
+
+As it stands my final test is not passing for an unknown reason. The printBalance method produces a statement that looks like it matches what I have provided in the test but it does not see it as the same. I would like to figure out what the issue is here and fix this problem.
+
+I would also like to give the numbers in my transactions more of a currency style. So giving them two decimal places and also a £ symbol next to them.
+
+I would like to add in a feature test for the app to show how the app works and ensure that the methods work when used in series and not just on their own.
+
+Finally I would like to have the chance to further refactor my code. To extract from some of the cumbersome methods and maybe create a transaction history object which would store transactions and also produce the statements for the bank class.
+
 ## Running the app locally
 
-* Clone the repository
+* Clone the repository.
 * Operate the program using the Console in Chrome:
 
-*
+```
+> bank = new Bank(account = new Account(1000))
+{getAccountBalance: ƒ, getTransactionHistory: ƒ, creditAccountBalance: ƒ, debitAccountBalance: ƒ, printStatement: ƒ}
+> bank.creditAccountBalance(200)
+undefined
+> bank.getAccountBalance()
+1200
+> bank.debitAccountBalance(300)
+undefined
+> bank.printStatement()
+"date || credit || debit || balance
+27/11/2017 || 200 ||   || 1200
+27/11/2017 ||   || 300 || 900
+"
+```
+* Run `open SpecRunner.html` to run tests.
 
 
 ## Specification
