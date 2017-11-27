@@ -13,12 +13,18 @@
 
     creditAccountBalance = function(amount) {
       account.creditAccount(amount);
+      
+    };
+
+    debitAccountBalance = function(amount) {
+      account.debitAccount(amount);
     };
 
     return {
       getAccountBalance: getAccountBalance,
       getTransactionHistory: getTransactionHistory,
-      creditAccountBalance: creditAccountBalance
+      creditAccountBalance: creditAccountBalance,
+      debitAccountBalance: debitAccountBalance
     };
   };
 })(this);

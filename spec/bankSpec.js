@@ -21,5 +21,10 @@ describe ('Bank', function() {
       bank.creditAccountBalance(100);
       expect(bank.getAccountBalance()).toEqual(1100);
     });
+
+    it('can debit the balance of the account', function() {
+      bank.debitAccountBalance(100);
+      expect(bank.getAccountBalance()).toEqual(900);
+    });
   });
 });
