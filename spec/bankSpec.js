@@ -12,7 +12,7 @@ describe ('Bank', function() {
     expect(bank.getAccountBalance()).toEqual(1000);
   });
 
-  it ('can store the transaction history inside itself', function() {
+  it ('has space to store the transaction history inside itself', function() {
     expect(bank.getTransactionHistory()).toEqual([]);
   });
 });
