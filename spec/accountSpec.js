@@ -15,4 +15,9 @@ describe ('Account', function() {
     account.creditAccount(100);
     expect(account.getBalance()).toEqual(1100);
   });
+
+  it ('can debit the account with a given amount', function() {
+    account.debitAccount(100);
+    expect(account.getBalance()).toEqual(900);
+  });
 });

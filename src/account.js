@@ -11,9 +11,14 @@
       _balance += amount;
     };
 
+    debitAccount = function(amount) {
+      _balance -= amount;
+    };
+
     return {
       getBalance: getBalance,
-      creditAccount: creditAccount
+      creditAccount: creditAccount,
+      debitAccount: debitAccount
     };
   };
 })(this);
