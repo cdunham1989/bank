@@ -6,10 +6,13 @@ This is my first practice tech test. Undertaken with a single day to complete as
 
 I decided to write this app using JavaScript. I decided this as I felt my knowledge in JavaScript fit this challenge well and I had done similar things before using Ruby and wanted to see how I would get on with writing a simple app using JavaScript.
 
+When initially creating the app I planned to store an array of transactions inside the account object. But when it came to creating this object it felt that this should be handled by more of a controller class such as a Bank. At this point I decided to break a new object out of the account 'class' within which I could keep a log of the transactions related to the account.
+
 ## Running the app locally
 
 * Clone the repository
-*
+* Operate the program using the Console in Chrome:
+
 *
 
 
