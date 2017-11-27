@@ -11,9 +11,14 @@
       return _transactionHistory;
     };
 
+    creditAccount = function(amount) {
+      _balance += amount;
+    };
+
     return {
       getBalance: getBalance,
-      getTransactionHistory: getTransactionHistory
+      getTransactionHistory: getTransactionHistory,
+      creditAccount: creditAccount
     };
   };
 })(this);
