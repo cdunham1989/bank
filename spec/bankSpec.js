@@ -22,6 +22,11 @@ describe ('Bank', function() {
       expect(bank.getAccountBalance()).toEqual(1100);
     });
 
+    it('stores credit transactions in the transaction history', function() {
+      bank.creditAccountBalance(100);
+      expect(bank.getTransactionHistory()).toEqual([{date: "27/11/2017", credit: 100, debit: null, balance: 1100}]);
+    });
+
     it('can debit the balance of the account', function() {
       bank.debitAccountBalance(100);
       expect(bank.getAccountBalance()).toEqual(900);
