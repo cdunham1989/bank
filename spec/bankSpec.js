@@ -24,7 +24,7 @@ describe ('Bank', function() {
 
     it('stores credit transactions in the transaction history', function() {
       bank.creditAccountBalance(100);
-      expect(bank.getTransactionHistory()).toEqual([{date: "27/11/2017", credit: 100, debit: null, balance: 1100}]);
+      expect(bank.getTransactionHistory()).toEqual([{date: "27/11/2017", credit: 100, debit: " ", balance: 1100}]);
     });
 
     it('can debit the balance of the account', function() {
@@ -34,7 +34,15 @@ describe ('Bank', function() {
 
     it('stores debit transactions in the transaction history', function() {
       bank.debitAccountBalance(100);
-      expect(bank.getTransactionHistory()).toEqual([{date: "27/11/2017", credit: null, debit: 100, balance: 900}]);
+      expect(bank.getTransactionHistory()).toEqual([{date: "27/11/2017", credit: " ", debit: 100, balance: 900}]);
     });
+  });
+  describe('Transactions', function() {
+    it('can print out a bank statement showing all transactions', function() {
+      bank.creditAccountBalance(100);
+      bank.debitAccountBalance(100);
+      expect(bank.getTransactionHistory()).toEqual([{date: "27/11/2017", credit: 100, debit: " ", balance: 1100}, {date: "27/11/2017", credit: " ", debit: 100, balance: 1000}]);
+      expect(bank.printStatement()).toEqual('date || credit || debit || balance \n 27/11/2017 || 100 ||   || 1100 \n 27/11/2017 ||   || 100 || 1000')
+    })
   });
 });
