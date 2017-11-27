@@ -12,7 +12,11 @@
     };
 
     debitAccount = function(amount) {
-      _balance -= amount;
+      if (_balance - amount < 0) {
+        throw new Error('You have insufficient funds');
+      } else {
+        _balance -= amount;
+      }
     };
 
     return {

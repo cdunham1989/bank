@@ -20,4 +20,9 @@ describe ('Account', function() {
     account.debitAccount(100);
     expect(account.getBalance()).toEqual(900);
   });
+
+  it ('can not have a balance below £0', function() {
+    expect(function(){ account.debitAccount(1001); }).toThrowError('You have insufficient funds');
+    expect(account.getBalance()).toEqual(1000);
+  });
 });
