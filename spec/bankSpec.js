@@ -12,7 +12,14 @@ describe ('Bank', function() {
     expect(bank.getAccountBalance()).toEqual(1000);
   });
 
-  it ('has space to store the transaction history inside itself', function() {
+  it('has space to store the transaction history inside itself', function() {
     expect(bank.getTransactionHistory()).toEqual([]);
+  });
+
+  describe('Account Management', function() {
+    it('can credit the balance of the account', function() {
+      bank.creditAccountBalance(100);
+      expect(bank.getAccountBalance()).toEqual(1100);
+    });
   });
 });
