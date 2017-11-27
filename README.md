@@ -8,6 +8,8 @@ I decided to write this app using JavaScript. I decided this as I felt my knowle
 
 When initially creating the app I planned to store an array of transactions inside the account object. But when it came to creating this object it felt that this should be handled by more of a controller class such as a Bank. At this point I decided to break a new object out of the account 'class' within which I could keep a log of the transactions related to the account.
 
+I then began to add in the basic functionality for crediting and debiting the account. Bringing in functionality to work against edge cases. At this point I added context sections for debit and credit to the account spec file to make them more readable.
+
 ## Running the app locally
 
 * Clone the repository

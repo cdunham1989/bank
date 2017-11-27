@@ -10,14 +10,18 @@
       if (typeof amount === "string") {
         throw new Error('Amount credited must be an integer');
       } else if (amount < 0){
-      throw new Error('Amount credited cannot be a negative integer');
+        throw new Error('Amount credited cannot be a negative integer');
       } else {
         _balance += amount;
       }
     };
 
     debitAccount = function(amount) {
-      if (_balance - amount < 0) {
+      if (typeof amount === "string") {
+        throw new Error('Amount debited must be an integer');
+      } else if (amount < 0){
+        throw new Error('Amount debited cannot be a negative integer');
+      } else if (_balance - amount < 0) {
         throw new Error('You have insufficient funds');
       } else {
         _balance -= amount;

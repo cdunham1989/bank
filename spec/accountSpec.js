@@ -38,5 +38,15 @@ describe('Account', function() {
       expect(function(){ account.debitAccount(1001); }).toThrowError('You have insufficient funds');
       expect(account.getBalance()).toEqual(1000);
     });
+
+    it('can not debit the account with a string value', function() {
+      expect(function() { account.debitAccount('Orange'); }).toThrowError('Amount debited must be an integer');
+      expect(account.getBalance()).toEqual(1000);
+    });
+
+    it('can not credit the account with a negative integer', function() {
+      expect(function() { account.debitAccount(-300); }).toThrowError('Amount debited cannot be a negative integer');
+      expect(account.getBalance()).toEqual(1000);
+    });
   });
 });
