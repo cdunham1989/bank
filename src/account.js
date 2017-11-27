@@ -7,7 +7,11 @@
     };
 
     creditAccount = function(amount) {
-      _balance += amount;
+      if (typeof amount === "string") {
+        throw new Error('Amount credited must be an integer');
+      } else {
+        _balance += amount;
+      }
     };
 
     debitAccount = function(amount) {

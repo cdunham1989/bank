@@ -16,6 +16,11 @@ describe ('Account', function() {
     expect(account.getBalance()).toEqual(1100);
   });
 
+  it ('can not credit the account with a string value', function() {
+    expect(function() { account.creditAccount('Orange'); }).toThrowError('Amount credited must be an integer');
+    expect(account.getBalance()).toEqual(1000);
+  });
+
   it ('can debit the account with a given amount', function() {
     account.debitAccount(100);
     expect(account.getBalance()).toEqual(900);
