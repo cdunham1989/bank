@@ -23,12 +23,10 @@
 
     printStatement = function(amount) {
       var line1 = "date || credit || debit || balance \n";
-      var otherlines = "";
-      _transactionHistory.forEach(function(transaction) {
-        array = Object.values(transaction);
-        otherlines += array[0] + " || " + array[1] + " || " + array[2] + " || " + array[3] + "\n";
+      var otherlines = _transactionHistory.map(function(transaction) {
+        return [transaction.date, transaction.credit, transaction.debit, transaction.balance].join(" || ");
       });
-      return (line1 + otherlines);
+      return line1 + otherlines.join("\n");
     };
 
     getDate = function() {
