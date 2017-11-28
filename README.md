@@ -14,7 +14,7 @@ At this point I decided to make the Bank class the controlling object. It manage
 
 ## Things to Work on
 
-As it stands my final test is not passing for an unknown reason. The printBalance method produces a statement that looks like it matches what I have provided in the test but it does not see it as the same. I would like to figure out what the issue is here and fix this problem.
+As it stands my tests only pass if you change the dates in the tests to todays date. This is the first thing I would like to fix in this system.
 
 I would also like to give the numbers in my transactions more of a currency style. So giving them two decimal places and also a £ symbol next to them.
 
@@ -43,7 +43,6 @@ undefined
 "
 ```
 * Run `open SpecRunner.html` to run tests.
-
 
 ## Specification
 
